@@ -11,13 +11,15 @@ function Reservation(name, phone, email, id) {
     this.id = id;
 };
 
-if (tables.length < 5) {
-    var newTable = new Reservation();
-    tables.push(newTable);
-    alert("Congrats! You've successfully booked a table at Hot-Restaurant!");
-} else {
-    alert("I'm sorry, there are no more tables available");
-    waitlist.push(newTable);
+function newRes() {
+    if (tables.length < 5) {
+        var newTable = new Reservation(input[0]);
+        tables.push(newTable);
+        alert("Congrats! You've successfully booked a table at Hot-Restaurant!");
+    } else {
+        alert("I'm sorry, there are no more tables available");
+        waitlist.push(newTable);
+    }
 }
-
 module.exports('Reservation');
+module.exports('newRes')
